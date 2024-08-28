@@ -1,0 +1,11 @@
+groups:
+- name: Domain Coordinator Service status
+  rules:
+  - alert: Domain Coordinator Service is DISABLED
+    expr: (dp_total_number_of_hb_to_sas{hostname=~".+dpmediation-0"} ==0) and ON(job)(dp_total_number_of_hb_to_sas{hostname=~".+dpmediation-1"} ==0) and ON(job)(dp_grant_request_count{hostname=~".+domainproxy-0"} ==0) and ON(job)(dp_hb_request_count{hostname=~".+domainproxy-0"} ==0) and ON(job)(dp_spectrum_inquiry_request_count{hostname=~".+domainproxy-0"} ==0) and ON(job)(dp_relinquishment_requests_count{hostname=~".+domainproxy-0"} ==0) and ON(job)(dp_registration_requests_count{hostname=~".+domainproxy-0"} ==0)
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      description: "Domain Coordinator Service is DISABLED"
+      currentvalue: "{{ $value }}"

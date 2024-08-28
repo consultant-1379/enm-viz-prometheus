@@ -1,0 +1,34 @@
+modules:
+  http_2xx:
+    prober: http
+    timeout: 8s
+    http:
+      valid_http_versions: ["HTTP/1.1", "HTTP/2"]
+      valid_status_codes: [] # Defaults to 2xx
+      method: GET
+      no_follow_redirects: false
+      fail_if_ssl: false
+      fail_if_not_ssl: true
+      tls_config:
+        insecure_skip_verify: true
+      preferred_ip_protocol: "ip4" # defaults to "ip6"
+  http_post_2xx:
+    prober: http
+    timeout: 8s
+    http:
+      valid_http_versions: ["HTTP/1.1", "HTTP/2"]
+      valid_status_codes: [] # Defaults to 2xx
+      method: POST
+      no_follow_redirects: false
+      fail_if_ssl: false
+      fail_if_not_ssl: true
+      fail_if_body_not_matches_regexp:
+        - '{"code":"SUCCESS","message":"Authentication Successful"}'
+      tls_config:
+        insecure_skip_verify: true
+      headers:
+        Content-type: "application/x-www-form-urlencoded"
+        Accept-Encoding: "gzip,deflate"
+        Accept: "*/*"
+        cache-control: "no-cache"
+      body: "IDToken1=Administrator&IDToken2=TestPassw0rd"

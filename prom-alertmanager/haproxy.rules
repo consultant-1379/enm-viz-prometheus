@@ -1,0 +1,29 @@
+groups:
+  - name: HAProxy
+    rules:
+      - alert: HAProxy instance down
+        expr: probe_success{job="blackbox_haproxy_availability"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          description: "HAProxy is down (instance {{ $labels.instance }})"
+          currentvalue: "{{ $value }}"
+
+      - alert: HAProxy missing
+        expr: absent(up{job="blackbox_haproxy_availability"})
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          description: "HAProxy is missing (instance {{ $labels.instance }})"
+          currentvalue: "{{ $value }}"
+
+      - alert: HAProxy login failing
+        expr: probe_success{job="blackbox_haproxy_login"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          description: "HAProxy is failing to authenticate (instance {{ $labels.instance }})"
+          currentvalue: "{{ $value }}"

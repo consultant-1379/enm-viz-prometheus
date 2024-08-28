@@ -1,0 +1,24 @@
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.20.0.3      6a71880a3dfc
+172.19.0.7      6a71880a3dfc
+
+10.0.18.20      bmasenm01.ericsson.se
+10.200.0.148    cbrsenm1.charter.com
+10.9.20.20      lteoss.eng.nsight.com
+192.168.181.20  home.enmaas.charitonvalley.com
+10.1.4.20       launch.enm.cww.com
+10.169.0.20     launch.enm.ekn.com
+10.220.6.20     enm01.ftc-i.net
+10.213.20.20    HAUPPENM01.speedcastwireless.com
+10.132.0.20     launch.enm.kingstreetwireless.com
+10.100.50.20    enm01.ntwls.net
+172.24.75.212   enm01.tbaytel.com
+10.100.200.20   trialenm01.ericsson.se
+10.161.9.84     labenm01.lteic.com
+10.146.107.148  bmasenm02.ericsson.se
+10.3.30.20      enm01xaas.ericsson.se

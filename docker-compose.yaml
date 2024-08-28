@@ -1,0 +1,76 @@
+version: "2"
+
+#networks:
+#  vis_net:
+
+volumes:
+  grafana-storage:
+  prometheus-storage:
+
+services:
+  grafana:
+    image: grafana/grafana
+    networks:
+      - vis_net
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    ports:
+      - 3000:3000
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel,savantly-heatmap-panel
+    restart: always
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/:ro
+      - prometheus-storage:/prometheus
+      - ./prom-alertmanager:/alertmanager:rw
+      - ./file-sd-configs:/file-sd-configs:rw
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+    ports:
+      - 9090:9090
+    networks:
+      - vis_net
+    restart: always
+  blackbox-exporter:
+    image: prom/blackbox-exporter:master
+    volumes:
+      - ./blackbox-exporter/:/config/:ro
+    command:
+      - "--config.file=/config/blackbox.yml"
+    ports:
+      - 9115:9115
+    restart: always
+  openstack-exporter:
+    image: quay.io/niedbalski/openstack-exporter-linux-amd64:master
+    command:
+      - "default"
+    volumes:
+      - ./openstack-exporter/clouds.yaml:/etc/openstack/clouds.yaml:ro
+    ports:
+      - 9180:9180
+    networks:
+      - vis_net
+    restart: always
+  nginx-reverse-proxy:
+    image: nginx
+    volumes:
+      - /root/visualisation-docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - /root/visualisation-docker/nginx/certs:/etc/nginx/certs
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - vis_net
+      - awx
+    restart: always
+
+networks:
+  vis_net:
+  awx:
+    external:
+      name: awxcompose_default

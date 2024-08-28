@@ -1,0 +1,1 @@
+cat static_dependencies.cfg | curl --data-binary @- http://localhost:9091/metrics/job/pushgateway

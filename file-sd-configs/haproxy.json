@@ -1,0 +1,107 @@
+[
+  {
+    "targets": ["10.0.18.20:80"],
+    "labels": {
+      "tenancy": "BMASENM01_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.200.0.148:80"],
+    "labels": {
+      "tenancy": "CHARTER_CBRS_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.9.20.20:80"],
+    "labels": {
+      "tenancy": "CELLCOM_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["192.168.181.20:80"],
+    "labels": {
+      "tenancy": "CVENM01_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.1.4.20:80"],
+    "labels": {
+      "tenancy": "CWW_ENM_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.169.0.20:80"],
+    "labels": {
+      "tenancy": "EKN_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.220.6.20:80"],
+    "labels": {
+      "tenancy": "FTC_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.213.20.20:80"],
+    "labels": {
+      "tenancy": "HAUPPENM01_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.132.0.20:80"],
+    "labels": {
+      "tenancy": "KSW_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.100.50.20:80"],
+    "labels": {
+      "tenancy": "NTWLS_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["172.24.75.212:80"],
+    "labels": {
+      "tenancy": "TBAYTEL_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.100.200.20:80"],
+    "labels": {
+      "tenancy": "TRAILENM01_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.161.9.84:80"],
+    "labels": {
+      "tenancy": "VERIZON_LAB_ATL",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.146.107.148:80"],
+    "labels": {
+      "tenancy": "BMAS-02_FRA",
+      "name": "haproxy"
+    }
+  },
+  {
+    "targets": ["10.3.30.20:80"],
+    "labels": {
+      "tenancy": "ENM01XAAS_FRA",
+      "name": "haproxy"
+    }
+  }
+]

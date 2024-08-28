@@ -1,0 +1,29 @@
+groups:
+- name: PM KPI Breach
+  rules:
+  - alert: PM File Collection KPI Breach
+    expr: (sum without (hostname)(pmserv_files_failed) / (sum without (hostname)(pmserv_files_failed) + sum without (hostname)(pmserv_files_collected))) > 0.8
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      description: "PM File Collection is < 80%"
+      currentvalue: "{{ $value }}"
+
+  - alert: PM Avg ROP Collection time KPI Breach
+    expr: (sum without (hostname) (pmserv_rop_collection_time) /2) > 780
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      description: "Avg file collection time in ROP is > 780 seconds"
+      currentvalue: "{{ $value }}"
+
+  - alert: PM Max ROP Collection time KPI Breach
+    expr: (pmserv_rop_collection_time) > 890
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      description: "Max file collection time in ROP is > 890 seconds"
+      currentvalue: "{{ $value }}"

@@ -1,0 +1,13 @@
+clouds:
+  default:
+    region_name: regionOne
+    identity_api_version: 3
+    identity_interface: internal
+    auth:
+      username: CTF_C6B04_admin
+      password: admin123
+      project_name: CTF_C6B04
+      project_domain_name: "Default"
+      user_domain_name: "Default"
+      auth_url: https://cloud6b.athtem.eei.ericsson.se:13000/v3
+    verify: false

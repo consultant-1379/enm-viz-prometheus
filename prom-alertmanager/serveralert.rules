@@ -1,0 +1,43 @@
+groups:
+- name: Server-Alert
+  rules:
+  - alert: User CPU threshold breach
+    expr: (cpu_usage_user ) > 85
+    for: 4m
+    labels:
+      severity: critical
+    annotations:
+      description: "User CPU usage for {{ $labels.hostname }} is > 85%"
+      currentvalue: "{{ $value }}"
+  - alert: System CPU threshold breach
+    expr: (cpu_usage_sys) > 85
+    for: 4m
+    labels:
+      severity: critical
+    annotations:
+      description: "System CPU usage for {{ $labels.hostname }} is > 85%"
+      currentvalue: "{{ $value }}"
+  - alert: Steal CPU threshold breach
+    expr: (cpu_usage_steal) > 85
+    for: 4m
+    labels:
+      severity: critical
+    annotations:
+      description: "Steal CPU usage for {{ $labels.hostname }} is > 85%"
+      currentvalue: "{{ $value }}"
+  - alert: I/O Wait CPU threshold breach
+    expr: (cpu_usage_wait) > 85
+    for: 4m
+    labels:
+      severity: critical
+    annotations:
+      description: "I/O Wait CPU usage for {{ $labels.hostname }} is > 85%"
+      currentvalue: "{{ $value }}"
+  - alert: Memory threshold breach
+    expr: (mem_used_percent ) > 99
+    for: 4m
+    labels:
+      severity: critical
+    annotations:
+      description: "Memory usage for {{ $labels.hostname }} is > 99%"
+      currentvalue: "{{ $value }}"

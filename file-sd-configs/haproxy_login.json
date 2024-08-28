@@ -1,0 +1,107 @@
+[
+  {
+    "targets": ["https://bmasenm01.ericsson.se/login"],
+    "labels": {
+      "tenancy": "BMASENM01_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://cbrsenm1.charter.com/login"],
+    "labels": {
+      "tenancy": "CHARTER_CBRS_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://lteoss.eng.nsight.com/login"],
+    "labels": {
+      "tenancy": "CELLCOM_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://home.enmaas.charitonvalley.com/login"],
+    "labels": {
+      "tenancy": "CVENM01_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://launch.enm.cww.com/login"],
+    "labels": {
+      "tenancy": "CWW_ENM_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://launch.enm.ekn.com/login"],
+    "labels": {
+      "tenancy": "EKN_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://enm01.ftc-i.net/login"],
+    "labels": {
+      "tenancy": "FTC_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://HAUPPENM01.speedcastwireless.com/login"],
+    "labels": {
+      "tenancy": "HAUPPENM01_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://launch.enm.kingstreetwireless.com/login"],
+    "labels": {
+      "tenancy": "KSW_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://enm01.ntwls.net/login"],
+    "labels": {
+      "tenancy": "NTWLS_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://enm01.tbaytel.com/login"],
+    "labels": {
+      "tenancy": "TBAYTEL_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://trialenm01.ericsson.se/login"],
+    "labels": {
+      "tenancy": "TRAILENM01_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://labenm01.lteic.com/login"],
+    "labels": {
+      "tenancy": "VERIZON_LAB_ATL",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://bmasenm02.ericsson.se/login"],
+    "labels": {
+      "tenancy": "BMAS-02_FRA",
+      "name": "haproxy-login"
+    }
+  },
+  {
+    "targets": ["https://enm01xaas.ericsson.se/login"],
+    "labels": {
+      "tenancy": "ENM01XAAS_FRA",
+      "name": "haproxy-login"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+groups:
+- name: CM-Status
+  rules:
+  - alert: CM KPI Breach
+    expr: (cm_status{type="sync_percent"}) < 80
+    for: 4m
+    labels:
+      severity: critical
+    annotations:
+      description: "CM KPI Breach is < 80%"
+      currentvalue: "{{ $value }}"
